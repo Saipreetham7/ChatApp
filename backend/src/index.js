@@ -25,11 +25,11 @@ app.use('/api/auth', authRoutes);
 app.use('/api/messages', messageRoutes);
 
 if (process.env.NODE_ENV == 'production') {
-  app.use(express.static(path.join(__dirname, '../frontend/chatapp/dist')));
+  app.use(express.static(path.join(__dirname, '../../frontend/chatapp/dist')));
 
   app.get('*', (req, res) => {
     res.sendFile(
-      path.join(__dirname, '../frontend/chatapp', 'dist', 'index.html')
+      path.join(__dirname, '../../frontend/chatapp', 'dist', 'index.html')
     );
   });
 }
